@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#087a55"><title>My One App</title>
+<style>
+:root{--green:#087a55;--deep:#07583f;--mint:#e8f5ef;--ink:#14231e;--muted:#6b7c75;--line:#e7ece9;--bg:#f5f8f6}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.app{max-width:520px;margin:auto;min-height:100vh;background:#fff;position:relative;padding-bottom:82px}
+header{padding:22px 20px 14px;background:#fff;display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;gap:10px;align-items:center;font-weight:800;font-size:19px;color:var(--deep)}
+.logo{width:38px;height:38px;border-radius:13px;background:linear-gradient(145deg,#0a9a69,#07583f);display:grid;place-items:center;color:white;font-weight:900;letter-spacing:-2px}
+.avatar{width:38px;height:38px;border-radius:50%;background:var(--mint);display:grid;place-items:center;color:var(--deep);font-weight:700}
+main{padding:0 18px}
+.hello{font-size:13px;color:var(--muted);margin:12px 2px 4px}
+h1{font-size:23px;margin:0 2px 16px;letter-spacing:-.5px}
+.balance{background:linear-gradient(130deg,#087a55,#064c39);color:white;border-radius:22px;padding:20px;margin-bottom:22px;box-shadow:0 9px 22px #07583f20}
+.balance-top{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#d4eee3}
+.amount{font-size:31px;font-weight:800;letter-spacing:.4px;margin:10px 0 15px}
+.balance-actions{display:flex;gap:10px}
+.balance-actions button{border:1px solid #ffffff55;background:#ffffff16;color:white;border-radius:12px;padding:10px 14px;font-weight:650}
+.section-head{display:flex;justify-content:space-between;align-items:center;margin:22px 2px 12px}
+h2{font-size:17px;margin:0}
+.small{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px 8px}
+.service{border:0;background:#fff;padding:10px 3px 8px;border-radius:14px;text-align:center;color:var(--ink);font:inherit}
+.service:active{background:var(--mint)}
+.ico{width:48px;height:48px;border-radius:16px;background:var(--mint);color:var(--deep);display:grid;place-items:center;margin:0 auto 7px;font-size:21px;font-weight:700}
+.service span:last-child{font-size:11px;font-weight:650;display:block}
+.banner{margin:22px 0;background:#f0f7f3;border:1px solid #e3eee8;padding:15px;border-radius:17px}
+.banner strong{display:block;margin-bottom:4px}.banner p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}
+.tx{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.tx-icon{width:40px;height:40px;border-radius:13px;background:#f0f7f3;display:grid;place-items:center}
+.tx-info{flex:1}.tx-info b{display:block;font-size:13px}.tx-info small{color:var(--muted);font-size:11px}
+.tx-amt{font-size:13px;font-weight:750}
+nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);height:72px;background:#fff;border-top:1px solid var(--line);display:flex;justify-content:space-around;align-items:center;padding-bottom:env(safe-area-inset-bottom)}
+nav button{background:none;border:0;color:#7c8a84;font:600 10px system-ui;display:grid;gap:4px;justify-items:center}
+nav button.active{color:var(--green)}nav b{font-size:19px}
+.overlay{position:fixed;inset:0;background:#0a211a66;display:none;align-items:flex-end;justify-content:center}
+.sheet{background:#fff;border-radius:22px 22px 0 0;padding:22px;width:min(520px,100%);min-height:260px}
+.sheet h3{margin:0 0 8px;font-size:20px}.sheet p{color:var(--muted);font-size:13px;line-height:1.5}
+.field{width:100%;padding:13px;border:1px solid #dce6e0;border-radius:12px;margin:7px 0 12px;font:inherit}
+.primary{width:100%;padding:14px;border:0;border-radius:13px;background:var(--green);color:#fff;font-weight:750;font:inherit}
+.note{font-size:10px;color:#78877f;text-align:center;margin:12px 8px}
+@media(min-width:600px){body{padding:20px 0}.app{border-radius:25px;overflow:hidden;box-shadow:0 8px 40px #102a1c15;min-height:850px}nav{position:absolute}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="logo">1A</div>My One App</div><div class="avatar">U</div></header>
+<main>
+<div class="hello">WELCOME BACK</div><h1>Hello there 👋</h1>
+<section class="balance"><div class="balance-top"><span>Wallet overview</span><span>TEST MODE</span></div><div class="amount">KES ••••••</div><div class="balance-actions"><button onclick="openService('Add money')">＋ Add money</button><button onclick="openService('Wallet details')">Wallet details</button></div></section>
+<div class="section-head"><h2>Quick services</h2><span class="small">View all</span></div>
+<div class="grid">
+<button class="service" onclick="openService('Buy airtime')"><span class="ico">▣</span><span>Airtime</span></button>
+<button class="service" onclick="openService('Buy bundles')"><span class="ico">◉</span><span>Bundles</span></button>
+<button class="service" onclick="openService('Pay bill')"><span class="ico">▤</span><span>Pay bill</span></button>
+<button class="service" onclick="openService('Send money')"><span class="ico">➤</span><span>Send money</span></button>
+<button class="service" onclick="openService('Withdraw')"><span class="ico">⇧</span><span>Withdraw</span></button>
+<button class="service" onclick="openService('Scheduled payments')"><span class="ico">◷</span><span>Scheduled</span></button>
+<button class="service" onclick="openService('Transaction history')"><span class="ico">↻</span><span>History</span></button>
+<button class="service" onclick="openService('Help and support')"><span class="ico">?</span><span>Support</span></button>
+</div>
+<div class="banner"><strong>Everything in one place</strong><p>Manage everyday services from one simple dashboard. Payments in this preview are not connected to a provider.</p></div>
+<div class="section-head"><h2>Recent activity</h2><span class="small">See history</span></div>
+<div class="tx"><div class="tx-icon">▣</div><div class="tx-info"><b>Airtime purchase</b><small>Example transaction · Today</small></div><div class="tx-amt">—</div></div>
+<div class="tx"><div class="tx-icon">▤</div><div class="tx-info"><b>Bill payment</b><small>Example transaction · Yesterday</small></div><div class="tx-amt">—</div></div>
+<p class="note">DEMO PROTOTYPE · No real money, payments, or personal data are processed.</p>
+</main>
+<nav><button class="active"><b>⌂</b>Home</button><button onclick="openService('Payments')"><b>▤</b>Payments</button><button onclick="openService('Activity')"><b>↻</b>Activity</button><button onclick="openService('Profile')"><b>◉</b>Profile</button></nav>
+</div>
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeService()"><div class="sheet"><h3 id="sheetTitle">Service</h3><p id="sheetText">This is a preview of the service screen.</p><label class="small" for="entry">Sample detail</label><input class="field" id="entry" placeholder="Enter a sample value"><button class="primary" onclick="demoAction()">Continue in preview</button><p class="note" id="feedback">Demo only — no transaction will be sent.</p></div></div>
+<script>
+let current='';
+function openService(name){current=name;document.getElementById('sheetTitle').textContent=name;document.getElementById('sheetText').textContent='This screen is part of the My One App interface prototype. A real service needs a secure backend and an approved provider connection.';document.getElementById('entry').value='';document.getElementById('feedback').textContent='Demo only — no transaction will be sent.';document.getElementById('overlay').style.display='flex'}
+function closeService(){document.getElementById('overlay').style.display='none'}
+function demoAction(){let v=document.getElementById('entry').value.trim();document.getElementById('feedback').textContent=v?'Preview input received. No payment or transfer was made.':'Enter a sample value to preview this screen.'}
+</script>
+</body></html>
